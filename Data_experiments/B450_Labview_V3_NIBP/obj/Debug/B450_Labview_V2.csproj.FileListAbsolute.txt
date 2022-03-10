@@ -1,0 +1,8 @@
+/Users/itzelavila/Documents/RTD31DApp/B450_Labview_V2/bin/Debug/B450_Labview_V2.dll
+/Users/itzelavila/Documents/RTD31DApp/B450_Labview_V2/bin/Debug/B450_Labview_V2.pdb
+/Users/itzelavila/Documents/RTD31DApp/B450_Labview_V2/obj/Debug/B450_Labview_V2.csproj.AssemblyReference.cache
+/Users/itzelavila/Documents/RTD31DApp/B450_Labview_V2/obj/Debug/B450_Testbench.B450_Labview_Debug.resources
+/Users/itzelavila/Documents/RTD31DApp/B450_Labview_V2/obj/Debug/B450_Labview_V2.csproj.GenerateResource.cache
+/Users/itzelavila/Documents/RTD31DApp/B450_Labview_V2/obj/Debug/B450_Labview_V2.csproj.CoreCompileInputs.cache
+/Users/itzelavila/Documents/RTD31DApp/B450_Labview_V2/obj/Debug/B450_Labview_V2.dll
+/Users/itzelavila/Documents/RTD31DApp/B450_Labview_V2/obj/Debug/B450_Labview_V2.pdb

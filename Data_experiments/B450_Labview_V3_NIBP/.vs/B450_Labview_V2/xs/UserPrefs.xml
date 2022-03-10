@@ -1,0 +1,32 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="NIBP_values.cs">
+    <Files>
+      <File FileName="ECG_Values.cs" Line="24" Column="30" />
+      <File FileName="B450Comms.cs" Line="601" Column="6" />
+      <File FileName="HR_Source.cs" Line="29" Column="1" />
+      <File FileName="PPG_Values.cs" Line="1" Column="1" />
+      <File FileName="B450_Labview.cs" Line="25" Column="1" />
+      <File FileName="AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="NIBP_values.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="B450_Labview_V2" expanded="True">
+            <Node name="B450_Labview_V2" expanded="True">
+              <Node name="NIBP_values.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/itzelavila/Documents/RTD31DApp_itz/B450_Labview_V2/HR_Source.cs" relfile="HR_Source.cs" line="14" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

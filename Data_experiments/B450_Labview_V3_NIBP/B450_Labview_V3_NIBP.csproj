@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: \\Mac\Home\Documents\RTD31DApp\data\B450_Labview_V2.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{00D681CE-3954-4BB7-B0C1-0124180FBF73}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>B450_Labview_V3</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <ApplicationVersion>1.0.0.1</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>B450_Testbench</RootNamespace>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConsoleTest\Program.cs" />
+    <Compile Include="HR_Source.cs" />
+    <Compile Include="ECG_Values.cs" />
+    <Compile Include="PPG_Values.cs" />
+    <Compile Include="B450_Labview.cs" />
+    <Compile Include="B450_Labview_Debug.cs" />
+    <Compile Include="WAVEFORM_MODE.cs" />
+    <Compile Include="DRI_PHYSIO_TYPE.cs" />
+    <Compile Include="DRI_LEVEL.cs" />
+    <Compile Include="WAVEFORM_CHANNEL.cs" />
+    <Compile Include="B450Comms.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="NIBP_values.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="B450_Labview_Debug.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
