@@ -70,9 +70,9 @@ def exp_analisys(df1,df2,df3,df4,df5):
     MPS1_3=np.average( df3['Voltage_1'][loc_PS1_3])
     MPS2_3=np.average( df3['Voltage_2'][loc_PS2_3])
 
-    plt.plot(df3['Voltage_1'])
-    plt.plot(loc_PS1_3, df3['Voltage_1'][loc_PS1_3], "x")
-    plt.show()
+    # plt.plot(df3['Voltage_1'])
+    # plt.plot(loc_PS1_3, df3['Voltage_1'][loc_PS1_3], "x")
+    # plt.show()
 
     loc_PS1_4, _ = find_peaks(df4['Voltage_1'], distance=900)
     loc_PS2_4, _ = find_peaks(df4['Voltage_2'], distance=900)
@@ -101,7 +101,7 @@ def exp_analisys(df1,df2,df3,df4,df5):
     std_DBP=np.std([df1['DBP'][0],df2['DBP'][0],df3['DBP'][0],df4['DBP'][0],df5['DBP'][0]])
     std_MBP=np.std([df1['MBP'][0],df2['MBP'][0],df3['MBP'][0],df4['MBP'][0],df5['MBP'][0]])
 
-    print(mean_MPS1,std_MPS1,mean_MPS2,std_MPS2,mean_SBP,std_SBP,mean_DBP,std_DBP,mean_MBP,std_MBP)
+    #print(mean_MPS1,std_MPS1,mean_MPS2,std_MPS2,mean_SBP,std_SBP,mean_DBP,std_DBP,mean_MBP,std_MBP)
 
     return mean_MPS1,std_MPS1,mean_MPS2,std_MPS2,mean_SBP,std_SBP,mean_DBP,std_DBP,mean_MBP,std_MBP
 

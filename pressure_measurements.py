@@ -84,3 +84,65 @@ mean_MPS1_28_7,std_MPS1_28_7,mean_MPS2_28_7,std_MPS2_28_7,mean_SBP_28_7,std_SBP_
 mean_MPS1_28_5,std_MPS1_28_5,mean_MPS2_28_5,std_MPS2_28_5,mean_SBP_28_5,std_SBP_28_5,mean_DBP_28_5,std_DBP_28_5,mean_MBP_28_5,std_MBP_28_5 = exp_analisys(df_28_5_1[0:5000],df_28_5_2[0:5000],df_28_5_3[0:5000],df_28_5_4[0:5000],df_28_5_5[0:5000])
 voltages=[5.2,6.2,7.2]
 
+mean_MPS1 = [mean_MPS1_18, mean_MPS1_28, mean_MPS1_38, mean_MPS1_48]
+std_MPS1 = [std_MPS1_18, std_MPS1_28, std_MPS1_38, std_MPS1_48]
+
+mean_MPS2 = [mean_MPS2_18, mean_MPS2_28, mean_MPS2_38, mean_MPS2_48]
+std_MPS2 = [std_MPS2_18, std_MPS2_28, std_MPS2_38, std_MPS2_48]
+
+mean_SBP = [mean_SBP_18, mean_SBP_28, mean_SBP_38, mean_SBP_48]
+std_SBP = [std_SBP_18, std_SBP_28, std_SBP_38, std_SBP_48]
+
+mean_DBP = [mean_DBP_18, mean_DBP_28, mean_DBP_38, mean_DBP_48]
+std_DBP = [std_DBP_18, std_DBP_28, std_DBP_38, std_DBP_48]
+
+mean_MBP = [mean_MBP_18, mean_MBP_28, mean_MBP_38, mean_MBP_48]
+std_MBP = [std_MBP_18, std_MBP_28, std_MBP_38, std_MBP_48]
+
+mean_PS1_V=[mean_MPS1_28_5,mean_MPS1_28,mean_MPS1_28_7]
+mean_PS2_V=[mean_MPS2_28_5,mean_MPS2_28,mean_MPS2_28_7]
+mean_SBP_V=[mean_SBP_28_5,mean_SBP_28,mean_SBP_28_7]
+mean_DBP_V=[mean_DBP_28_5,mean_DBP_28,mean_DBP_28_7]
+mean_MBP_V=[mean_MBP_28_5,mean_MBP_28,mean_MBP_28_7]
+
+std_PS1_V=[std_MPS1_28_5,std_MPS1_28,std_MPS1_28_7]
+std_PS2_V=[std_MPS2_28_5,std_MPS2_28,std_MPS2_28_7]
+std_SBP_V=[std_SBP_28_5,std_SBP_28,std_SBP_28_7]
+std_DBP_V=[std_DBP_28_5,std_DBP_28,std_DBP_28_7]
+std_MBP_V=[std_MBP_28_5,std_MBP_28,std_MBP_28_7]
+
+plt.figure()
+plt.errorbar(volumes, mean_MPS1, std_MPS1, marker='s', mfc='red',
+         mec='black', ms=8, mew=2,label='PS1')
+plt.errorbar(volumes, mean_MPS2, std_MPS2, marker='s', mfc='blue',
+         mec='black', ms=8, mew=2,label='PS2')
+plt.errorbar(volumes, mean_SBP, std_SBP, marker='s', mfc='green',
+         mec='black', ms=8, mew=2,label='SBP')
+plt.errorbar(volumes, mean_DBP, std_DBP, marker='s', mfc='brown',
+         mec='black', ms=8, mew=2,label='DBP')
+plt.errorbar(volumes, mean_MBP, std_MBP, marker='s', mfc='purple',
+         mec='black', ms=8, mew=2,label='MBP')
+plt.xticks(volumes) 
+plt.title('Phantom pressure measurements at different volumes @6.2 V')
+plt.xlabel('volume (ml)') 
+plt.ylabel('Pressure (mmHg)')
+plt.legend()
+plt.show()
+
+plt.figure()
+plt.errorbar(voltages, mean_PS1_V, std_PS1_V, marker='s', mfc='red',
+         mec='black', ms=8, mew=2,label='PS1')
+plt.errorbar(voltages, mean_PS2_V, std_PS2_V, marker='s', mfc='blue',
+         mec='black', ms=8, mew=2,label='PS2')
+plt.errorbar(voltages, mean_SBP_V, std_SBP_V, marker='s', mfc='green',
+         mec='black', ms=8, mew=2,label='SBP')
+plt.errorbar(voltages, mean_DBP_V, std_DBP_V, marker='s', mfc='brown',
+         mec='black', ms=8, mew=2,label='DBP')
+plt.errorbar(voltages, mean_MBP_V, std_MBP_V, marker='s', mfc='purple',
+         mec='black', ms=8, mew=2,label='MBP')
+plt.xticks(voltages) 
+plt.title('Phantom pressure measurements at different voltages @28 ml')
+plt.xlabel('voltage (V)') 
+plt.ylabel('Pressure (mmHg)')
+plt.legend()
+plt.show()
