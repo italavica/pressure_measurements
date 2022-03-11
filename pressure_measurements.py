@@ -1,7 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-from functions import plot_exp
+from functions import plot_exp,exp_analisys
+from scipy.signal import find_peaks
+
 #extract data
 
 #18 ml @ 6.2 V
@@ -55,10 +57,30 @@ print(len(df_48_1),len(df_48_2),len(df_48_3),len(df_48_4),len(df_48_5))
 print(len(df_28_7_1),len(df_28_7_2),len(df_28_7_3),len(df_28_7_4),len(df_28_7_5),len(df_28_7_6))
 print(len(df_28_5_1),len(df_28_5_2),len(df_28_5_3),len(df_28_5_4),len(df_28_5_5))
 
-#plot_exp(df_18_1,df_18_2,df_18_3,df_18_4,df_18_5)
-#plot_exp(df_28_1,df_28_2,df_28_3,df_28_4,df_28_5)
-#plot_exp(df_38_1,df_38_2,df_38_3,df_38_4,df_38_5)
-#plot_exp(df_48_1,df_48_2,df_48_3,df_48_4,df_48_5)
+df_48_1['Voltage_2'][4159:4162] = (df_48_1['Voltage_2'][4159]+df_48_1['Voltage_2'][4162])/2
+df_48_3['Voltage_1'][1700:1703] = (df_48_3['Voltage_1'][1700]+df_48_3['Voltage_1'][1703])/2
+df_28_5_1['Voltage_2'][3510:3513]= (df_28_5_1['Voltage_2'][3510]+df_28_5_1['Voltage_2'][3513])/2
+df_28_5_1['Voltage_1'][3510:3513]= (df_28_5_1['Voltage_1'][3510]+df_28_5_1['Voltage_1'][3513])/2
 
-plot_exp(df_28_7_1,df_28_7_2,df_28_7_3,df_28_7_4,df_28_7_5)
-plot_exp(df_28_5_1,df_28_5_2,df_28_5_3,df_28_5_4,df_28_5_5)
+#plot_exp(df_18_1[0:5000],df_18_2[0:5000],df_18_3[1750:6750],df_18_4[0:5000],df_18_5[0:5000])
+#plot_exp(df_28_1[0:5000],df_28_2[0:5000],df_28_3[0:5000],df_28_4[0:5000],df_28_5[0:5000])
+#plot_exp(df_38_1[0:5000],df_38_2[0:5000],df_38_3[0:5000],df_38_4[2150:7150],df_38_5[0:5000])
+#plot_exp(df_48_1[0:5000],df_48_2[0:5000],df_48_3[0:5000],df_48_4[0:5000],df_48_5[0:5000])
+#plot_exp(df_28_7_1[0:5000],df_28_7_2[0:5000],df_28_7_3[0:5000],df_28_7_4[0:5000],df_28_7_5[0:5000])
+#plot_exp(df_28_5_1[0:5000],df_28_5_2[0:5000],df_28_5_3[0:5000],df_28_5_4[0:5000],df_28_5_5[0:5000])
+
+
+#volume variation
+
+mean_MPS1_18,std_MPS1_18,mean_MPS2_18,std_MPS2_18,mean_SBP_18,std_SBP_18,mean_DBP_18,std_DBP_18,mean_MBP_18,std_MBP_18 = exp_analisys(df_18_1[0:5000],df_18_2[0:5000],df_18_3[0:5000],df_18_4[0:5000],df_18_5[0:5000])
+mean_MPS1_28,std_MPS1_28,mean_MPS2_28,std_MPS2_28,mean_SBP_28,std_SBP_28,mean_DBP_28,std_DBP_28,mean_MBP_28,std_MBP_28 = exp_analisys(df_28_1[0:5000],df_28_2[0:5000],df_28_3[0:5000],df_28_4[0:5000],df_28_5[0:5000])
+mean_MPS1_38,std_MPS1_38,mean_MPS2_38,std_MPS2_38,mean_SBP_38,std_SBP_38,mean_DBP_38,std_DBP_38,mean_MBP_38,std_MBP_38 = exp_analisys(df_38_1[0:5000],df_38_2[0:5000],df_38_3[0:5000],df_38_4[0:5000],df_38_5[0:5000])
+mean_MPS1_48,std_MPS1_48,mean_MPS2_48,std_MPS2_48,mean_SBP_48,std_SBP_48,mean_DBP_48,std_DBP_48,mean_MBP_48,std_MBP_48 = exp_analisys(df_48_1[0:5000],df_48_2[0:5000],df_48_3[0:5000],df_48_4[0:5000],df_48_5[0:5000])
+volumes=[18,28,38,48]
+
+#voltage variation
+
+mean_MPS1_28_7,std_MPS1_28_7,mean_MPS2_28_7,std_MPS2_28_7,mean_SBP_28_7,std_SBP_28_7,mean_DBP_28_7,std_DBP_28_7,mean_MBP_28_7,std_MBP_28_7 = exp_analisys(df_28_7_1[0:5000],df_28_7_2[0:5000],df_28_7_3[0:5000],df_28_7_4[0:5000],df_28_7_5[0:5000])
+mean_MPS1_28_5,std_MPS1_28_5,mean_MPS2_28_5,std_MPS2_28_5,mean_SBP_28_5,std_SBP_28_5,mean_DBP_28_5,std_DBP_28_5,mean_MBP_28_5,std_MBP_28_5 = exp_analisys(df_28_5_1[0:5000],df_28_5_2[0:5000],df_28_5_3[0:5000],df_28_5_4[0:5000],df_28_5_5[0:5000])
+voltages=[5.2,6.2,7.2]
+
