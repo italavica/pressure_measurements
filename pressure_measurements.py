@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-from functions import plot_exp,exp_analisys
+from functions import plot_exp,exp_analisys,PTT
 from scipy.signal import find_peaks
 
 #extract data
@@ -62,7 +62,7 @@ df_48_3['Voltage_1'][1700:1703] = (df_48_3['Voltage_1'][1700]+df_48_3['Voltage_1
 df_28_5_1['Voltage_2'][3510:3513]= (df_28_5_1['Voltage_2'][3510]+df_28_5_1['Voltage_2'][3513])/2
 df_28_5_1['Voltage_1'][3510:3513]= (df_28_5_1['Voltage_1'][3510]+df_28_5_1['Voltage_1'][3513])/2
 
-#plot_exp(df_18_1[0:5000],df_18_2[0:5000],df_18_3[1750:6750],df_18_4[0:5000],df_18_5[0:5000])
+plot_exp(df_18_1[0:5000],df_18_2[0:5000],df_18_3[1750:6750],df_18_4[0:5000],df_18_5[0:5000])
 #plot_exp(df_28_1[0:5000],df_28_2[0:5000],df_28_3[0:5000],df_28_4[0:5000],df_28_5[0:5000])
 #plot_exp(df_38_1[0:5000],df_38_2[0:5000],df_38_3[0:5000],df_38_4[2150:7150],df_38_5[0:5000])
 #plot_exp(df_48_1[0:5000],df_48_2[0:5000],df_48_3[0:5000],df_48_4[0:5000],df_48_5[0:5000])
@@ -143,6 +143,42 @@ plt.errorbar(voltages, mean_MBP_V, std_MBP_V, marker='s', mfc='purple',
 plt.xticks(voltages) 
 plt.title('Phantom pressure measurements at different voltages @28 ml')
 plt.xlabel('voltage (V)') 
+plt.ylabel('Pressure (mmHg)')
+plt.legend()
+plt.show()
+
+mPTT_18,sPTT_18=PTT(df_18_1[0:5000],df_18_2[0:5000],df_18_3[0:5000],df_18_4[0:5000],df_18_5[0:5000])
+mPTT_28,sPTT_28=PTT(df_28_1[0:5000],df_28_2[0:5000],df_28_3[0:5000],df_28_4[0:5000],df_28_5[0:5000])
+mPTT_38,sPTT_38=PTT(df_38_1[0:5000],df_38_2[0:5000],df_38_3[0:5000],df_38_4[0:5000],df_38_5[0:5000])
+mPTT_48,sPTT_48=PTT(df_48_1[0:5000],df_48_2[0:5000],df_48_3[0:5000],df_48_4[0:5000],df_48_5[0:5000])
+
+mPTT_5,sPTT_5=PTT(df_28_5_1[0:5000],df_28_5_2[0:5000],df_28_5_3[0:5000],df_28_5_4[0:5000],df_28_5_5[0:5000])
+mPTT_6,sPTT_6=PTT(df_28_1[0:5000],df_28_2[0:5000],df_28_3[0:5000],df_28_4[0:5000],df_28_5[0:5000])
+mPTT_7,sPTT_7=PTT(df_28_7_1[0:5000],df_28_7_2[0:5000],df_28_7_3[0:5000],df_28_7_4[0:5000],df_28_7_5[0:5000])
+
+PTT_std=[sPTT_18,sPTT_28,sPTT_38,sPTT_48]
+PTT_volumes=[mPTT_18,mPTT_28,mPTT_38,mPTT_48]
+
+PTT_std_v=[sPTT_5,sPTT_6,sPTT_7]
+PTT_voltage=[mPTT_5,mPTT_6,mPTT_7]
+
+
+plt.figure()
+plt.errorbar(voltages, PTT_voltage, PTT_std_v, marker='s', mfc='red',
+         mec='black', ms=8, mew=2,label='PTT')
+plt.xticks(voltages) 
+plt.title('PTT increasing voltage')
+plt.xlabel('voltage (V)') 
+plt.ylabel('Pressure (mmHg)')
+plt.legend()
+plt.show()
+
+plt.figure()
+plt.errorbar(volumes, PTT_volumes, PTT_std, marker='s', mfc='red',
+         mec='black', ms=8, mew=2,label='PTT')
+plt.xticks(volumes) 
+plt.title('PTT increasing volume')
+plt.xlabel('volume (ml)') 
 plt.ylabel('Pressure (mmHg)')
 plt.legend()
 plt.show()
