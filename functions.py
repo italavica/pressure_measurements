@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.signal import find_peaks
+from scipy.signal import butter, lfilter, freqz,filtfilt
 
 def plot_single(df1):
     fs=1000
@@ -219,3 +220,40 @@ def fftPlot(sig, dt=None, plot=True):
         plt.show()
 
     return sigFFTPos, freqAxisPos
+
+
+def butter_lowpass(cutoff, fs, order=5):
+    nyq = 0.5 * fs
+    normal_cutoff = cutoff / nyq
+    b, a = butter(order, normal_cutoff, btype='low', analog=False)
+    return b, a
+
+
+
+def butter_lowpass_filter(data, cutoff, fs, order=5):
+    b, a = butter_lowpass(cutoff, fs, order=order)
+    y = lfilter(b, a, data)
+    return y
+
+
+
+def PS1_filter(data,cutoff, fs, order):
+    l=len(data)
+    t= np.arange(0, l/fs, 1/fs)
+    b, a = butter_lowpass(cutoff, fs, order)
+    y = butter_lowpass_filter(data, cutoff, fs, order)
+    y1 = filtfilt(b, a, data)
+
+    return y1,t
+
+def PS1_filter_5(d1,d2,d3,d4,d5,cutoff, fs, order):
+
+    b, a = butter_lowpass(cutoff, fs, order)
+    y1 = filtfilt(b, a, d1)
+    y2 = filtfilt(b, a, d2)
+    y3 = filtfilt(b, a, d3)
+    y4 = filtfilt(b, a, d4)
+    y5 = filtfilt(b, a, d5)
+
+    return y1,y2,y3,y4,y5
+
