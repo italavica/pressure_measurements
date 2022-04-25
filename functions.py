@@ -257,3 +257,19 @@ def PS1_filter_5(d1,d2,d3,d4,d5,cutoff, fs, order):
 
     return y1,y2,y3,y4,y5
 
+def PS1_filter_10(d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,cutoff, fs, order):
+
+    b, a = butter_lowpass(cutoff, fs, order)
+    y1 = filtfilt(b, a, d1)
+    y2 = filtfilt(b, a, d2)
+    y3 = filtfilt(b, a, d3)
+    y4 = filtfilt(b, a, d4)
+    y5 = filtfilt(b, a, d5)
+    y6 = filtfilt(b, a, d6)
+    y7 = filtfilt(b, a, d7)
+    y8 = filtfilt(b, a, d8)
+    y9 = filtfilt(b, a, d9)
+    y10 = filtfilt(b, a, d10)
+
+    return y1,y2,y3,y4,y5,y6,y7,y8,y9,y10
+
