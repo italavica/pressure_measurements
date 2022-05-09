@@ -36,6 +36,12 @@ std_MBP_35ml=np.std(MBP_35ml)
 MBP_40ml=[59,57,59,61,59,54,65,49,57,60]
 mean_MBP_40ml=np.average(MBP_40ml)
 std_MBP_40ml=np.std(MBP_40ml)
+SBP_40ml=[127,113,113,113,123,115,135,85,109,126]
+mean_SBP_40ml=np.average(SBP_40ml)
+std_SBP_40ml=np.std(SBP_40ml)
+DBP_40ml=[41,39,41,42,41,37,45,35,39,42]
+mean_DBP_40ml=np.average(DBP_40ml)
+std_DBP_40ml=np.std(DBP_40ml)
 
 MBP_45ml=[66,71,70,69,64,67,68,65,87,73]
 mean_MBP_45ml=np.average(MBP_45ml)
@@ -183,7 +189,8 @@ MBP_std=[std_MBP_10ml,std_MBP_15ml,std_MBP_20ml,std_MBP_25ml,std_MBP_30ml,std_MB
 
 PTT_volumes=[mPTT_10ml,mPTT_15ml,mPTT_20ml,mPTT_25ml,mPTT_30ml,mPTT_35ml,mPTT_40ml,mPTT_45ml,mPTT_50ml,mPTT_55ml]
 MBP_volumes=[mean_MBP_10ml,mean_MBP_15ml,mean_MBP_20ml,mean_MBP_25ml,mean_MBP_30ml,mean_MBP_35ml,mean_MBP_40ml,mean_MBP_45ml,mean_MBP_50ml,mean_MBP_55ml]
-
+print('DBP',mean_DBP_40ml,std_DBP_40ml)
+print('SBP',mean_SBP_40ml,std_SBP_40ml)
 volumes=[10,15,20,25,30,35,40,45,50,55]
 
 plt.figure()

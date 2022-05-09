@@ -1,3 +1,5 @@
+mPS2_10ml,sPS2_10ml
 
+PS2_std=[sPS2_10ml,sPS2_15ml,sPS2_20ml,sPS2_25ml,sPS2_30ml,sPS2_35ml,sPS2_40ml,sPS2_45ml,sPS2_50ml,sPS2_55ml]
 
-mPTT_10ml,mPTT_15ml,mPTT_20ml,mPTT_25ml,mPTT_30ml,mPTT_35ml,mPTT_40ml,mPTT_45ml,mPTT_50ml,mPTT_55ml
+PS2_volumes=[mPS2_10ml,mPS2_15ml,mPS2_20ml,mPS2_25ml,mPS2_30ml,mPS2_35ml,mPS2_40ml,mPS2_45ml,mPS2_50ml,mPS2_55ml]
